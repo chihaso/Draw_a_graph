@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>グラフを描く</title>
+    <link rel="stylesheet" href="graph.css" />
+  </head>
+  <body>
+    <div class="introduction">
+      <h1>グラフ描画プログラム</h1>
+      <p>選択した関数のグラフを描画（プロット）します。</p>
+      <p>表示中の関数: <span id="displayed_func">未設定です</span></p>
+    </div>
+    <div id="graph_area">
+      <canvas id="graph_canvas"></canvas>
+    </div>
+    <div class="select_function">
+      <p>関数を選んでください</p>
+      <form method="post" name="functionForm">
+        <select name="_select">
+          <option value="quadratic_equation"
+            >y = a * x<sup>2</sup> + b * x + c</option
+          >
+          <option value="sin">a * sin(b * x + c)</option>
+          <option value="cos">a * cos(b * x + c)</option>
+          <option value="tan">a * tan(b * x + c)</option>
+          <option value="arcsin">a * arcsin(b * x + c)</option>
+          <option value="arccos">a * arccos(b * x + c)</option>
+          <option value="arctan">a * arctan(b * x + c)</option>
+        </select>
+        <input type="button" id="button" value="プロットする" />
+      </form>
+      <form name="set_coefficients">
+        <p>ここに係数の設定</p>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.10.2/paper-full.min.js"></script>
+    <script src="graph.js"></script>
+  </body>
+</html>
