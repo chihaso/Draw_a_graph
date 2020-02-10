@@ -47,10 +47,10 @@ function func(selected_func, x) {
 let current_func = document.getElementById("displayed_func");
 
 document.getElementById("button").onclick = function() {
-  let selected_func = document.functionForm._select.value;
+  const selected_func = document.functionForm._select.value;
   current_func.textContent = selected_func;
+  const path = new Path();
   let dot;
-  let path = new Path();
   let previous_point;
   let current_point;
   for (x = -250; x < 251; ++x) {
