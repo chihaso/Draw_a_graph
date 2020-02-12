@@ -1,49 +1,48 @@
 paper.install(window);
 paper.setup(document.getElementById("graph-canvas"));
 
-function func(selectedFunc, x) {
-  let a, b, c, d;
+function func(selectedFunc, x, a, b, c, d) {
   switch (selectedFunc) {
     case "quadratic-equation":
-      a = 0.1;
-      b = 1;
-      c = 0;
+      a = a || 0.1;
+      b = b || 1;
+      c = c || 0;
       return a * x * x + b * x + c;
     case "sin":
-      a = 100;
-      b = 0.1;
-      c = 0;
-      d = 0;
+      a = a || 100;
+      b = b || 0.1;
+      c = c || 0;
+      d = d || 0;
       return a * Math.sin(b * x + c) + d;
     case "cos":
-      a = 100;
-      b = 0.1;
-      c = 0;
-      d = 0;
+      a = a || 100;
+      b = b || 0.1;
+      c = c || 0;
+      d = d || 0;
       return a * Math.cos(b * x + c) + d;
     case "tan":
-      a = 100;
-      b = 0.01;
-      c = 0;
-      d = 0;
+      a = a || 100;
+      b = b || 0.01;
+      c = c || 0;
+      d = d || 0;
       return a * Math.tan(b * x + c) + d;
     case "arcsin":
-      a = 100;
-      b = 0.1;
-      c = 0;
-      d = 0;
+      a = a || 100;
+      b = b || 0.1;
+      c = c || 0;
+      d = d || 0;
       return a * Math.asin(b * x + c) + d;
     case "arccos":
-      a = 100;
-      b = 0.1;
-      c = 0;
-      d = 0;
+      a = a || 100;
+      b = b || 0.1;
+      c = c || 0;
+      d = d || 0;
       return a * Math.acos(b * x + c) + d;
     case "arctan":
-      a = 100;
-      b = 0.1;
-      c = 0;
-      d = 0;
+      a = a || 100;
+      b = b || 0.1;
+      c = c || 0;
+      d = d || 0;
       return a * Math.atan(b * x + c) + d;
   }
 }
@@ -82,11 +81,14 @@ document.getElementById("button").onclick = () => {
   const selectedFunc = document.functionForm._select.value;
   const path = new Path();
   let previousPoint;
-
   currentFunc.textContent = selectedFunc;
+  let a = document.setCoefficients.aValue.value;
+  let b = document.setCoefficients.bValue.value;
+  let c = document.setCoefficients.cValue.value;
+  let d = document.setCoefficients.dValue.value;
 
   for (let x = -250; x < 251; x += 1) {
-    const y = func(selectedFunc, x);
+    const y = func(selectedFunc, x, a, b, c, d);
     const currentPoint = new Point(x + 250, 250 - y);
     const dot = Shape.Circle(x + 250, 250 - y, 2);
     dot.fillColor = "black";
