@@ -53,9 +53,30 @@ let currentFunc = document.getElementById("displayed-func");
 const xAxis = new Path();
 xAxis.add(new Point(0, 251), new Point(502, 251));
 xAxis.strokeColor = "black";
+for (let i = 51; i < 452; i += 50) {
+  const scale = new Path();
+  scale.add(new Point(i, 256), new Point(i, 246));
+  scale.strokeColor = "black";
+  const text = new PointText(i, 265);
+  text.justification = "center";
+  text.fillColor = "black";
+  text.fontSize = 10;
+  text.content = i - 251;
+}
+
 const yAxis = new Path();
 yAxis.add(new Point(251, 0), new Point(251, 502));
 yAxis.strokeColor = "black";
+for (let i = 51; i < 452; i += 50) {
+  const scale = new Path();
+  scale.add(new Point(256, i), new Point(246, i));
+  scale.strokeColor = "black";
+  const text = new PointText(265, i + 5);
+  text.justification = "left";
+  text.fillColor = "black";
+  text.fontSize = 10;
+  text.content = 251 - i;
+}
 
 document.getElementById("button").onclick = () => {
   const selectedFunc = document.functionForm._select.value;
