@@ -8,27 +8,27 @@
   <body>
     <div class="introduction">
       <h1>グラフ描画プログラム</h1>
-      <p>選択した関数のグラフを描画（プロット）します。</p>
-      <p>表示中の関数: <span id="displayed_func">未設定です</span></p>
+      <p>選択した関数のグラフを描画します。</p>
+      <p>表示中の関数: <span id="displayed-func">未設定です</span></p>
     </div>
-    <div id="graph_area">
-      <canvas id="graph_canvas"></canvas>
+    <div id="graph">
+      <canvas id="graph-canvas"></canvas>
     </div>
-    <div class="select_function">
-      <p>関数を選んでください</p>
-      <form method="post" name="functionForm">
+    <div class="select-function">
+      <form method="post" name="functionForm" class="function-form">
+        <p>関数を選んでください</p>
         <select name="_select">
-          <option value="quadratic_equation"
-            >y = a * x<sup>2</sup> + b * x + c</option
-          >
-          <option value="sin">a * sin(b * x + c)</option>
-          <option value="cos">a * cos(b * x + c)</option>
-          <option value="tan">a * tan(b * x + c)</option>
-          <option value="arcsin">a * arcsin(b * x + c)</option>
-          <option value="arccos">a * arccos(b * x + c)</option>
-          <option value="arctan">a * arctan(b * x + c)</option>
+          <option value="quadratic-equation">
+            y = a * x<sup>2</sup> + b * x + c
+          </option>
+          <option value="sin">a * sin(b * x + c) + d</option>
+          <option value="cos">a * cos(b * x + c) + d</option>
+          <option value="tan">a * tan(b * x + c) + d</option>
+          <option value="arcsin">a * arcsin(b * x + c) + d</option>
+          <option value="arccos">a * arccos(b * x + c) + d</option>
+          <option value="arctan">a * arctan(b * x + c) + d</option>
         </select>
-        <input type="button" id="button" value="プロットする" />
+        <input type="button" id="button" value="描画する" />
       </form>
       <form name="set_coefficients">
         <p>ここに係数の設定</p>

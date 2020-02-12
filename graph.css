@@ -1,37 +1,25 @@
-#graph_area {
+#graph {
   position: relative;
 }
 
-#graph_canvas {
+#graph-canvas {
   width: 500px;
   height: 500px;
   border: solid 1px black;
   position: relative;
 }
 
-/* 縦軸 */
-#graph_area::before {
-  content: "";
-  position: absolute;
-  width: 0px;
-  height: 500px;
-  border: solid 0.5px black;
-  top: 0px;
-  left: 249.5px;
+.function-form p {
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
 
-/* 横軸 */
-#graph_area::after {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 0px;
-  border: solid 0.5px black;
-  top: 250px;
-  left: 0px;
+.set-coefficients p {
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
 
-.highlight {
-  background: #ff0;
-  font-weight: bold;
+.set-coefficients input {
+  width: 50px;
+  margin-left: 10px;
 }
