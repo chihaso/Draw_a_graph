@@ -1,6 +1,3 @@
-paper.install(window);
-paper.setup(document.getElementById("graph-canvas"));
-
 function makeFormula(selectedFunc) {
   switch (selectedFunc) {
     case "quadratic-equation":
@@ -65,7 +62,6 @@ function func(selectedFunc, x, a, b, c, d) {
       return a * Math.atan(b * x + c) + d;
   }
 }
-let currentFunc = document.getElementById("displayed-func");
 
 function drawAxis() {
   const xAxis = new Path();
@@ -97,18 +93,26 @@ function drawAxis() {
   }
 }
 
+let currentFunc = document.getElementById("displayed-func");
+
+paper.install(window);
+paper.setup(document.getElementById("graph-canvas"));
 drawAxis();
 
+document.getElementById("clearButton").onclick = () => {
+  paper.project.activeLayer.removeChildren();
+  drawAxis();
+};
 
 document.getElementById("drawButton").onclick = () => {
   const selectedFunc = document.functionForm._select.value;
   const path = new Path();
   let previousPoint;
   currentFunc.innerHTML = makeFormula(selectedFunc);
-  let a = document.setCoefficients.aValue.value;
-  let b = document.setCoefficients.bValue.value;
-  let c = document.setCoefficients.cValue.value;
-  let d = document.setCoefficients.dValue.value;
+  const a = document.setCoefficients.aValue.value;
+  const b = document.setCoefficients.bValue.value;
+  const c = document.setCoefficients.cValue.value;
+  const d = document.setCoefficients.dValue.value;
 
   for (let x = -250; x < 251; x += 1) {
     const y = func(selectedFunc, x, a, b, c, d);
