@@ -93,7 +93,7 @@ function drawAxis() {
   }
 }
 
-let currentFunc = document.getElementById("displayed-func");
+const currentFunc = document.getElementById("displayed-func");
 
 paper.install(window);
 paper.setup(document.getElementById("graph-canvas"));
@@ -107,12 +107,12 @@ document.getElementById("clearButton").onclick = () => {
 document.getElementById("drawButton").onclick = () => {
   const selectedFunc = document.functionForm._select.value;
   const path = new Path();
-  let previousPoint;
-  currentFunc.innerHTML = makeFormula(selectedFunc);
   const a = document.setCoefficients.aValue.value;
   const b = document.setCoefficients.bValue.value;
   const c = document.setCoefficients.cValue.value;
   const d = document.setCoefficients.dValue.value;
+  let previousPoint;
+  currentFunc.innerHTML = makeFormula(selectedFunc);
 
   for (let x = -250; x < 251; x += 1) {
     const y = func(selectedFunc, x, a, b, c, d);

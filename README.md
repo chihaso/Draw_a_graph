@@ -10,5 +10,5 @@
 * Paper.js
 
 # 以下を参考にさせていただきました
-* 初めてのJavaScript 第3版 ―ES2015以降の最新ウェブ開発[Amazon商品ページ](https://www.amazon.co.jp/dp/4873117836)
+* 初めてのJavaScript 第3版 ―ES2015以降の最新ウェブ開発 [Amazon商品ページ](https://www.amazon.co.jp/dp/4873117836)
 * [Paper.js - Working with Path Items](http://paperjs.org/tutorials/paths/working-with-path-items/)
